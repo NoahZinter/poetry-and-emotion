@@ -30,7 +30,9 @@ describe "User can visit root path" do
     expect(current_path).to eq '/search'
     expect(page).to have_content('You searched for emily')
     expect(page).to have_content('Your Results')
-    
+    expect(page).to have_content('Emily Dickinson')
+    expect(page).to have_content('Not at Home to Callers')
+    expect(page).to have_content('Not at Home to Callers Says the Naked Tree -- Bonnet due in April -- Wishing you Good Day --')
 
   end
 end
