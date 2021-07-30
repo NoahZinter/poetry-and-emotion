@@ -22,5 +22,15 @@ describe "User can visit root path" do
     expect(current_path).to eq '/search'
   end
 
-  
+  it 'lists poems' do
+    visit '/'
+    fill_in 'author', with: 'emily'
+    click_button 'Get Poems'
+
+    expect(current_path).to eq '/search'
+    expect(page).to have_content('You searched for emily')
+    expect(page).to have_content('Your Results')
+    
+
+  end
 end
